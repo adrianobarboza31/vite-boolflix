@@ -12,7 +12,7 @@
        <h1>boolflix</h1>
        <div class="d-flex form">
             <input type="text" v-model="serchs">
-            <button @click="searc">search</button>
+            <button  @click="searc">search</button>
        </div>
     </div>
 </template>

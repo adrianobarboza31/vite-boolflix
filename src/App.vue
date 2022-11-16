@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent  @getfilm="getfilm"/>
   <main>
-  <Card :filmlist="filmlist"/>
+  <Card :filmlist="filmlist" :seriestvlist="seriestvlist"/>
   </main>
 </template>
 
@@ -26,21 +26,22 @@ import HeaderComponent from './components/Header.vue'
     },
     methods:{
       getfilm(value){
+       
         axios.get(this.filmURL + value).then(
           (res)=>{
             this.filmlist=[...res.data.results];
+           
             console.log(this.filmlist)
-          },
-          )
-      },
-      getseries(){
-        axios.get(this.seriestvURL+ this.search).then(
+            axios.get(this.seriestvURL+ value).then(
           (res)=>{
             this.seriestvlist=[...res.data.results];
             console.log(this.seriestvlist)
           },
           )
-      }
+          },
+          )
+      },
+     
     }
   }
 </script>
