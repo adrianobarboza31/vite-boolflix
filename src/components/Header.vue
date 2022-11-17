@@ -1,13 +1,4 @@
 <template>
-    <!-- <div class="d-flex row">
-        <div>
-            <h1>boolflix</h1>
-        </div>
-        <div class="d-flex row ">
-            <input type="text">
-            <button>Search</button>
-        </div>
-    </div> -->
     <div class="d-flex align-items-center justify-content-between">
        <h1>boolflix</h1>
        <div class="d-flex form">
