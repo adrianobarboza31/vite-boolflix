@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center justify-content-between bg-black">
        <h1>boolflix</h1>
        <div class="d-flex form">
             <input type="text" v-model="serchs">
@@ -32,4 +32,5 @@ h1{
 .form{
     height: 30px;
 }
+
 </style>
