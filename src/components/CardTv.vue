@@ -15,29 +15,42 @@
       <span v-for="n in 5" class="fa-star" :class="(n <= (Math.ceil(value.vote_average / 2))) ?'fa-solid':'fa-regular'"></span>
     </div>
     </div> -->
-    <div class="bo">
-        <h2>serietv</h2>
+    <div class="bo pt-3">
+        <h2 class="ps-3">serietv</h2>
     
     
     <div class="d-flex cc ">
-    <div class="ab-card d-flex" v-for="(value) in seriestvlist ">
+    <div class="ab-card d-flex ps-2" v-for="(value) in seriestvlist ">
         <div class="at-card">
             <div class="card-front card-block">
                 <img :src="value.poster_path? imgURL + value.poster_path:'https://via.placeholder.com/342x500'" alt="">
             </div>
         <div class="card-back card-block">
-            <div class="text-center">
+            <div class="pt-4 ps-3">
+                <strong>
+                    Titolo:
+                </strong>
                 {{value.name}}
             </div>
-            <div class="text-center">
+            <div class="ps-3">
+                <strong>Titolo originale:</strong>
                 {{value.original_name}}
             </div>
-            <div class="text-center">
+            <div class="ps-3">
+                <strong>
+                    Voto:
+                </strong>
                 <span v-for="n in 5" class="fa-star" :class="(n <= (Math.ceil(value.vote_average / 2))) ?'fa-solid':'fa-regular'"></span>
-                {{value.vote_average}}
+                <!-- {{value.vote_average}} -->
             </div>
-            <div class="text-center" v-if="flag.includes(value.original_language)">
+            <div class="ps-3">
+                <strong>Lingua:</strong>
+                <span class="ps-3" v-if="flag.includes(value.original_language)">
                 <img :src="'/img/' + value.original_language+'.svg'" alt="">
+            </span>
+            </div>
+            <div class="ps-3 pe-3 pt-1">
+              <strong>Overview:</strong>  {{value.overview}} 
             </div>
         </div>
         
@@ -67,7 +80,7 @@ img{
     width: 100%;
     height: 468px;
 }
-div.text-center img{
+div.card-back img{
     width: 40px;
     height: 20px;
 }
@@ -115,7 +128,7 @@ div.text-center{
 //    background-color: black;
 //     color: white;
     transform:rotateY(180deg) ;
-    
+    color: #C3C3C3;
 }
 .card-block{
 //     position: absolute;
@@ -126,5 +139,14 @@ div.text-center{
 }
 .at-card:hover {
     transform: rotateY(180deg);
+}
+strong{
+    color: white;
+}
+h2{
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'PT Sans', sans-serif;;
 }
 </style>
